@@ -4,5 +4,13 @@
   "description": "Frontend server for ph-todo-example.",
   "main": "index.js",
   "author": "chippawah <charles.cantrell@me.com>",
-  "license": "Apache Lisence 2.0"
+  "license": "Apache-2.0",
+  "dependencies": {
+    "express": "^4.14.0",
+    "helmet": "^3.4.0",
+    "q": "^1.4.1",
+    "seneca": "^3.2.2",
+    "seneca-amqp-transport": "^2.1.0",
+    "seneca-legacy-logger": "^0.1.0"
+  }
 }
