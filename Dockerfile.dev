@@ -7,4 +7,4 @@ ADD yarn.lock .
 
 RUN yarn install
 
-WORKDIR /usr/ph-todo-frontend/build
+WORKDIR /usr/ph-todo-frontend/build/server-assets
