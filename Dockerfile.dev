@@ -1,0 +1,10 @@
+FROM pinkhippos/base-development
+
+WORKDIR /usr/ph-todo-frontend
+ADD ./build ./build
+ADD ./package.json .
+ADD yarn.lock .
+
+RUN yarn install
+
+WORKDIR /usr/ph-todo-frontend/build/server-assets
