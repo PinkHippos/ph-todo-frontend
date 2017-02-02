@@ -8,6 +8,7 @@ module.exports = ->
       todo_service.get_todos()
       .then (todos)->
         $scope.todos = todos
+
     $scope.apply_class = (status)->
       switch status
         when 'new' then 'panel-danger'
@@ -19,6 +20,7 @@ module.exports = ->
       .then ->
         $scope.new_todo = null
         _get_todos()
+
     $scope.advance_status = (todo_id, current_status)->
       next_status = switch current_status
         when 'new' then 'inProgress'
@@ -31,6 +33,7 @@ module.exports = ->
     $scope.update_todo = (id, updated_todo)->
       todo_service.update_todo id, updated_todo
       .then ->
+        $scope.update_todo = null
         _get_todos()
     $scope.delete_todo = (id)->
       todo_service.delete_todo id
