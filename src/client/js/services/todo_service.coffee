@@ -1,7 +1,7 @@
 new class TodoService
   # Values here can be used only by the TodoService itself
   # Use 'this.***' or '@***' and make sure the fn is bound with '=>'
-  url: '/api/todos'
+  url: 'api/todos'
   format_query: (query)->
     formatted = ''
     first = true
@@ -26,7 +26,7 @@ new class TodoService
       # Setup the promise to be resolved when todos return
       dfd = $q.defer()
       # Check for and add query or use base url
-      _url = if query then "#{@url}#{@add_query query}" else @url
+      _url = if query then "#{@url}#{@format_query query}" else @url
       console.log '_URL', _url
       # Send the request to the API server
       $http.get _url
