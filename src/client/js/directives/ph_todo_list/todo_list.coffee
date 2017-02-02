@@ -33,3 +33,5 @@ module.exports = ->
         _get_todos()
     $scope.delete_todo = (id)->
       todo_service.delete_todo id
+      .then ->
+        _get_todos()

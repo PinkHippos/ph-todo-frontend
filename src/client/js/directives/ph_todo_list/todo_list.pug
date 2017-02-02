@@ -21,8 +21,10 @@
           p Todo Status -- {{item.status}}
           p Todo Id -- {{item.id}}
           p Created At -- {{item.createdAt}}
-          button.btn.btn-warning(ng-click='editing = !editing') Edit Todo
           button.btn.btn-success(ng-click='advance_status(item.id, item.status)') Advance Status
+          button.btn.btn-warning(ng-click='editing = !editing') Edit Todo
+          button.btn.btn-danger(ng-click='delete_todo(item.id)') Delete Todo
+
         div(ng-show='editing')
           .form-group
             label(for='updated_text') Todo Text
