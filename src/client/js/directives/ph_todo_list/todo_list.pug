@@ -26,5 +26,9 @@
         div(ng-show='editing')
           .form-group
             label(for='updated_text') Todo Text
-            input.form-control(ng-model='updated_todo.text' id='updated_text' placeholer='Enter updated text')
+            input.form-control(
+              ng-model='updated_todo.text'
+              id='updated_text'
+              placeholder='Enter updated text')
+          button.btn.btn-warning(ng-click='update_todo(item.id, updated_todo)') Submit
           button.btn.btn-danger(ng-click='editing = !editing') Cancel
