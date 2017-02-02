@@ -1,17 +1,30 @@
-.conatiner-fluid(uib-accordion)
-  div(uib-accordion-group ng-class='apply_class(item.status)' ng-repeat='item in todos')
-    .panel-heading(uib-accordion-heading)
-      h3.panel-title {{item.text}} - {{item.status}}
-    .panel-body
-      div(ng-show='!editing')
-        p Todo Text -- {{item.text}}
-        p Todo Status -- {{item.status}}
-        p Todo Id -- {{item.id}}
-        p Created At -- {{item.createdAt}}
-        button.btn.btn-warning(ng-click='editing = !editing') Edit Todo
-        button.btn.btn-success(ng-click='') Advance Status
-      div(ng-show='editing')
-        .form-group
-          label(for='updated_text') Todo Text
-          input.form-control(ng-model='updated_todo.text' id='updated_text' placeholer='Enter updated text')
-        button.btn.btn-danger(ng-click='editing = !editing') Cancel
+.conatiner-fluid
+  .panel.panel-info.form-group
+      .panel-heading Add A New Todo
+      .panel-body
+        .input-group
+          span.input-group-addon.btn.btn-success(
+            id='new_todo'
+            ng-click='add_todo(new_todo)') Submit
+          input.form-control(
+            ng-model='new_todo.text'
+            placeholder='Enter a new todo here...'
+            aria-describedby='new_todo'
+            )
+  div(uib-accordion)
+    div(uib-accordion-group ng-class='apply_class(item.status)' ng-repeat='item in todos')
+      .panel-heading(uib-accordion-heading)
+        h3.panel-title {{item.text}} - {{item.status}}
+      .panel-body
+        div(ng-show='!editing')
+          p Todo Text -- {{item.text}}
+          p Todo Status -- {{item.status}}
+          p Todo Id -- {{item.id}}
+          p Created At -- {{item.createdAt}}
+          button.btn.btn-warning(ng-click='editing = !editing') Edit Todo
+          button.btn.btn-success(ng-click='') Advance Status
+        div(ng-show='editing')
+          .form-group
+            label(for='updated_text') Todo Text
+            input.form-control(ng-model='updated_todo.text' id='updated_text' placeholer='Enter updated text')
+          button.btn.btn-danger(ng-click='editing = !editing') Cancel

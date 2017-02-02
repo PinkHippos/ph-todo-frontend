@@ -9,7 +9,12 @@ module.exports = ->
         when 'new' then 'panel-danger'
         when 'inProgress' then 'panel-warning'
         when 'complete' then 'panel-success'
-    $scope.closeOthers = true
+    $scope.add_todo = (new_todo)->
+      todo_service.add_todo new_todo
+      .then ->
+        todo_service.get_todos()
+        .then (todos)->
+          $scope.todos = todos
     $scope.update_todo = (id, updated_todo)->
       todo_service.update_todo id, updated_todo
     $scope.delete_todo = (id)->
