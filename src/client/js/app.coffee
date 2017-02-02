@@ -8,4 +8,5 @@ angular.module 'ph_todo', ['ui.router']
     # Set up all the states with $stateProvider
     require('./states') $stateProvider
 
+require './services'
 require './controllers'
