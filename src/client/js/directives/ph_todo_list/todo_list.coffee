@@ -33,7 +33,7 @@ module.exports = ->
     $scope.update_todo = (id, updated_todo)->
       todo_service.update_todo id, updated_todo
       .then ->
-        $scope.update_todo = null
+        $scope.updated_todo = null
         _get_todos()
     $scope.delete_todo = (id)->
       todo_service.delete_todo id
