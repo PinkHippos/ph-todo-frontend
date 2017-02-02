@@ -80,3 +80,5 @@ new class TodoService
         .then dfd.resolve
         .catch dfd.reject
       dfd.promise
+
+module.exports = TodoService
