@@ -12,7 +12,7 @@
             aria-describedby='new_todo'
             )
   div(uib-accordion)
-    div(uib-accordion-group ng-class='apply_class(item.status)' ng-repeat='item in todos')
+    div(uib-accordion-group ng-class='apply_class(item.status)' ng-repeat="item in todos | orderBy: '-createdAt' track by $index")
       .panel-heading(uib-accordion-heading)
         h3.panel-title {{item.text}} - {{item.status}}
       .panel-body
