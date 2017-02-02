@@ -17,6 +17,7 @@ module.exports = ->
     $scope.add_todo = (new_todo)->
       todo_service.add_todo new_todo
       .then ->
+        $scope.new_todo = null
         _get_todos()
     $scope.advance_status = (todo_id, current_status)->
       next_status = switch current_status
