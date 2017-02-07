@@ -34,8 +34,12 @@ new class TodoService
           # Strip the todos off the response and resolve the promise
           todos = res.data
           dfd.resolve todos
-        .catch dfd.reject
-      # return the promise to the caller
+        .catch (err)->
+          if err.status is 404
+            dfd.resolve []
+          else
+            dfd.reject err
+        # return the promise to the caller
       dfd.promise
 
     ##### add_todo #####
