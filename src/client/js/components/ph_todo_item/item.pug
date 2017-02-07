@@ -1,0 +1,21 @@
+div(uib-accordion-group ng-class='apply_class($ctrl.item.status)' )
+  .panel-heading(uib-accordion-heading)
+    h3.panel-title {{$ctrl.item.text}} - {{$ctrl.item.status}}
+  .panel-body
+    div(ng-show='!$ctrl.editing')
+      p Todo Text -- {{$ctrl.item.text}}
+      p Todo Status -- {{$ctrl.item.status}}
+      p Todo Id -- {{$ctrl.item.id}}
+      p Created At -- {{$ctrl.item.createdAt}}
+      button.btn.btn-success(ng-click='$ctrl.advance_status($ctrl.item.id, $ctrl.item.status)') Advance Status
+      button.btn.btn-warning(ng-click='$ctrl.editing = !$ctrl.editing') Edit Todo
+      button.btn.btn-danger(ng-click='$ctrl.delete_todo($ctrl.item.id)') Delete Todo
+    div(ng-show='$ctrl.editing')
+      .form-group
+        label(for='updated_text') Todo Text
+        input.form-control(
+          ng-model='$ctrl.updated_todo.text'
+          id='updated_text'
+          placeholder='Enter updated text')
+      button.btn.btn-warning(ng-click='$ctrl.update_todo($ctrl.item.id, $ctrl.updated_todo)') Submit
+      button.btn.btn-danger(ng-click='$ctrl.editing = !$ctrl.editing') Cancel
