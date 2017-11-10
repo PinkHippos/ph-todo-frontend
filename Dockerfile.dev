@@ -1,10 +1,11 @@
-FROM pinkhippos/base-development
+FROM node:8
 
-WORKDIR /usr/ph-todo-frontend
-ADD ./build ./build
-ADD ./package.json .
+WORKDIR /mircoserv/
+
+ADD src ./src
+ADD package.json ./package.json
 ADD yarn.lock .
 
-RUN yarn install
-
-WORKDIR /usr/ph-todo-frontend/build/server-assets
+RUN npm i -g coffeescript yarn; \
+    yarn install; \
+    yarn build
