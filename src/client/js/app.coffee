@@ -1,3 +1,5 @@
+require 'jquery'
+require 'bootstrap'
 angular = require 'angular'
 require 'angular-ui-router'
 require 'angular-ui-bootstrap'

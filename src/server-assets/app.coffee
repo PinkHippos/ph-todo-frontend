@@ -11,8 +11,14 @@ app.use morgan 'dev'
 # Protect ourselves
 app.use helmet()
 
-# Send only the client folder for requests to the server
-app.use '/', express.static "#{__dirname}/../client"
+vendor_router = express.Router()
+vendor_router.use express.static "#{__dirname}/../vendor"
 
+client_router = express.Router()
+client_router.use express.static "#{__dirname}/../client"
+# Send only the client & vendor folder for requests to the server
+app.use '/vendor/', vendor_router
+app.use '/', client_router
+# app.use '/vendor', express.static "#{__dirname}/../vendor"
 # Export the app for use in the server
 module.exports = app

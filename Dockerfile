@@ -1,6 +1,6 @@
 FROM node:8
 
-WORKDIR /mircoserv/
+WORKDIR /microserv
 
 ADD src ./src
 ADD package.json ./package.json
