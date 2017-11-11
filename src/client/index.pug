@@ -2,7 +2,10 @@ doctype html
 html(lang='en')
   head
     title Pink Hippos Todo
-    link(rel='stylesheet' href='style.css')
+    link(type='text/css' rel='stylesheet' href='/vendor/bootstrap/css/bootstrap.min.css')
   body(ng-app='ph_todo')
-    div(ui-view)
-    script(src='bundle.js')
+    ph-todo-nav
+    ui-view
+    script(type="text/javascript" src='/vendor/jquery/jquery.min.js')
+    script(type="text/javascript" src='/vendor/bootstrap/js/bootstrap.min.js')
+    script(type="text/javascript" src='/bundle.js')

@@ -5,3 +5,6 @@ module.exports = ($stateProvider)->
       url:'/'
       controller: 'home_ctrl'
       templateUrl: "#{base}home/home.html"
+      resolve:
+        todos: (todo_service)->
+          todo_service.get_todos()

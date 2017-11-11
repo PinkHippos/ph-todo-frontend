@@ -1,2 +1,2 @@
-module.exports = ($scope)->
-  $scope.test = 'this is the home ctrl'
+module.exports = ($scope, todos)->
+  $scope.todos = todos
