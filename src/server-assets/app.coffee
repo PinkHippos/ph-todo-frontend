@@ -10,9 +10,8 @@ app.use morgan 'dev'
 
 # Protect ourselves
 app.use helmet()
-
 # Send only the client folder for requests to the server
 app.use '/', express.static "#{__dirname}/../client"
-
+app.use '/vendor/', express.static "#{__dirname}/../vendor"
 # Export the app for use in the server
 module.exports = app
