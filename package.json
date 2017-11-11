@@ -8,9 +8,9 @@
     "provision": "node $PWD/build/server-assets/provision.js",
     "build:prep": "rm -rf $PWD/build/",
     "build:coffee": "coffee --output $PWD/build/ --compile $PWD/src/",
-    "vendor:create": "mkdir $PWD/build/vendor/ ; mkdir $PWD/build/vendor/bootstrap/ & mkdir $PWD/build/vendor/jquery/",
-    "vendor:bootstrap": "cp -R $PWD/node_modules/bootstrap/dist/ $PWD/build/vendor/bootstrap/",
-    "vendor:jquery": "cp -R $PWD/node_modules/jquery/dist/ $PWD/build/vendor/jquery/",
+    "vendor:create": "mkdir $PWD/build/vendor/",
+    "vendor:bootstrap": "cp -r $PWD/node_modules/bootstrap/dist $PWD/build/vendor/bootstrap/",
+    "vendor:jquery": "cp -r $PWD/node_modules/jquery/dist $PWD/build/vendor/jquery/",
     "vendor": "npm run vendor:create ; npm run vendor:bootstrap & npm run vendor:jquery",
     "bundle": "browserify -o $PWD/build/client/bundle.js -e $PWD/build/client/js/app.js",
     "build:pug": "pug --out $PWD/build/ $PWD/src/",
@@ -24,7 +24,6 @@
     "angular-ui-bootstrap": "^2.5.6",
     "angular-ui-router": "^0.4.2",
     "bootstrap": "^3.3.7",
-    "coffeescript": "^2.0.2",
     "express": "^4.14.0",
     "helmet": "^3.4.0",
     "jquery": "^3.2.1",
@@ -32,11 +31,12 @@
     "pug-cli": "^1.0.0-alpha6",
     "q": "^1.4.1",
     "seneca": "^3.2.2",
-    "seneca-amqp-transport": "^2.1.0",
+    "seneca-amqp-transport": "2.1.0",
     "seneca-legacy-logger": "^0.1.0",
     "tcp-ping": "^0.1.1"
   },
   "devDependencies": {
-    "browserify": "^14.5.0"
+    "browserify": "^14.5.0",
+    "coffeescript": "^2.0.2"
   }
 }
