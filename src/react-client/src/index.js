@@ -4,8 +4,9 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter, Route } from 'react-router-dom'
-import App from './components/App/';
 import reducers from './reducers';
+
+import TodoList from './containers/TodoList/'
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 class Hello extends React.Component {
@@ -20,9 +21,10 @@ ReactDOM.render(
       <div>
         <Route path='/hello' component={Hello} />
         <Route path='/goodbye' component={Goodbye} />
+        <Route path='/todos' component={TodoList} />
       </div>
     </BrowserRouter>
   </Provider>
-  , document.querySelector('.container'));
+  , document.querySelector('#root'));
 
 registerServiceWorker();
