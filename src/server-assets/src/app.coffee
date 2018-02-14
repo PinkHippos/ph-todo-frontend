@@ -15,10 +15,10 @@ vendor_router = express.Router()
 vendor_router.use express.static "#{__dirname}/../vendor"
 
 client_router = express.Router()
-client_router.use express.static "#{__dirname}/../client"
+client_router.use express.static "#{__dirname}/../../react-client/build"
 # Send only the client & vendor folder for requests to the server
-app.use '/vendor/', vendor_router
+# app.use '/vendor/', vendor_router
 app.use '/', client_router
-# app.use '/vendor', express.static "#{__dirname}/../vendor"
+
 # Export the app for use in the server
 module.exports = app

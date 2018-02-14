@@ -8,4 +8,4 @@ ADD yarn.lock .
 
 RUN npm i -g coffeescript yarn; \
     yarn install; \
-    yarn build
+    yarn build;
